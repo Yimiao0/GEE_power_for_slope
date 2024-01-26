@@ -1,5 +1,5 @@
 library(longpower)
-source(file = "./linear_fct_new.R")
+source(file = "./linear_fct.R")
 
 
 
