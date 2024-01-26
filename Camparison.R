@@ -40,6 +40,7 @@ S <- calc.S(t, A, rho.result, Y0.centered)
 
 samp.size <- ((1 - rho.result^2) * sigma.small.result^2 * (z.alpha + z.b)^2 / delta^2) * solve(S)[4,4]
 samp.size <- unname(ceiling(samp.size))
+samp.size
 
 
 # POWER
@@ -64,8 +65,13 @@ diggle.result <- diggle.linear.power(d = 0.1, t = t,
                                      sigma2 = sigma.small^2, R = rho, 
                                      alternative = "two.sided", power = 0.80)
 diggle.samp.size <- ceiling(diggle.result$N)
+diggle.samp.size
 
 
+### Liu, Liang's method
+
+
+### lmmpower: create a large sample
 # lmmpower(beta = 1, pct.change = -0.1, t = t,
 #          sig2.i = 0, sig2.s = 0, sig2.e = 0,
 #          cov.s.i = 0, 
